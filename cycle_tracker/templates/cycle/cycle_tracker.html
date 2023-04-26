@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="">
+<head>
+    <title>Cycle Dates</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+    <h1 class="header">Cycle Dates</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="previous_date" class="previous_date">Previous Date (dd/MM/yyyy):</label>
+        <input type="text" name="previous_date" id="previous_date" class="first_button">
+        <br>
+        <label for="cycle_length" class="cycle_length">Cycle Length (in days):</label>
+        <input type="text" name="cycle_length" id="cycle_length" class="second_button">
+        <br>
+        <input type="submit" value="Generate Cycle Dates" class="button">
+    </form>
+    {% if cycle %}
+    <div class="cycle-dates">
+        <p class="next_occurrence">Next Occurrence: {{ cycle.next_occurrence }}</p>
+        <div class="second_row">
+        <p>Next 12 Occurrences:</p>
+        <ul class="next-12-occurrences">
+            {% for occurrence in cycle.next_12_occurrences %}
+            <li>{{ occurrence }}</li>
+            {% endfor %}
+        </ul>
+            </div>
+        <p class="flow_date">Flow Date: {{ cycle.flow_date }}</p>
+        <p class="ovulation_date">Ovulation Date: {{ cycle.ovulation_date }}</p>
+        <div class="safe_periods">
+        <p class="sp">Safe Periods:</p>
+        <ul class="safe-periods">
+            {% for period in cycle.safe_periods %}
+            <li>{{ period.0 }} - {{ period.1 }}</li>
+            {% endfor %}
+        </ul>
+            </div>
+    </div>
+    {% endif %}
+</body>
+</html>

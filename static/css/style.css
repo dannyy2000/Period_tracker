@@ -1,0 +1,76 @@
+
+
+.cycle-dates {
+    font-size: 16px;
+}
+.next-12-occurrences {
+    font-size: 14px;
+}
+.safe-periods {
+    font-size: 12px;
+}
+.header{
+    text-align: center;
+    padding-top: 20px;
+    position: relative;
+    bottom: 20px;
+    right: 40px;
+}
+.first_button{
+    height: 30px;
+    width: 150px;
+    margin-left: 400px;
+}
+.second_button{
+    height: 30px;
+    width: 150px;
+    margin-left: 445px;
+    position: relative;
+    top: 40px;
+}
+.previous_date{
+    position: relative;
+    left: 390px;
+}
+.cycle_length{
+     position: relative;
+      left: 430px;
+      top: 40px;
+}
+.button{
+    border-radius: 10px;
+    height: 30px;
+     position: relative;
+      left: 600px;
+      top: 70px;
+      background-color:#222;
+    color: #fff;
+
+}
+.next_occurrence{
+    position: relative;
+    top: 85px;
+}
+.second_row{
+    position: relative;
+    top: 49.9px;
+    left: 250px;
+}
+.flow_date{
+    position: relative;
+    left: 420px;
+    bottom: 200px;
+}
+.ovulation_date{
+     position: relative;
+     left: 650px;
+     bottom: 235px;
+}
+.safe_periods{
+     position: relative;
+     left: 900px;
+     bottom: 270px;
+}
+.sp{
+    margin-left: 50px;
+}
