@@ -5,12 +5,12 @@
     <title>Cycle Dates</title>
    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<body class="background-color">
-    <h1 class="header">Cycle Dates</h1>
+<body>
+    <marquee direction="left"><h1 class="header">Cycle Dates</h1></marquee>
     <form method="post">
         {% csrf_token %}
-        <label for="previous_date" class="previous_date">What day did you your most recent period start? (dd/MM/yyyy):</label>
-        <input type="Text" name="previous_date" id="previous_date" class="first_button">
+        <label for="previous_date" class="previous_date">What day did you your most recent period start? :</label>
+        <input type="Date" name="previous_date" id="previous_date" class="first_button">
         <br>
         <label for="cycle_length" class="cycle_length">Number of days in your cycle(in days):</label>
         <input type="text" name="cycle_length" id="cycle_length" class="second_button">

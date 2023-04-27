@@ -1,4 +1,7 @@
 
+body{
+    background-image: url("/static/css/blue background.jpg");
+}
 .cycle-dates {
     font-size: 16px;
 }
@@ -19,6 +22,8 @@
     height: 30px;
     width: 150px;
     margin-left: 400px;
+    background-color: #fff;
+    border-radius: 10px;
 }
 .second_button{
     height: 30px;
@@ -26,6 +31,8 @@
     margin-left: 445px;
     position: relative;
     top: 40px;
+    background-color: #fff;
+    border-radius: 10px;
 }
 .previous_date{
     position: relative;
@@ -42,9 +49,11 @@
      position: relative;
       left: 600px;
       top: 70px;
-      background-color:#222;
+      background-color: #87CEFA;
     color: #fff;
-
+}
+.button:hover{
+    background-color: cornflowerblue;
 }
 .next_occurrence{
     position: relative;
@@ -69,7 +78,7 @@
     position: relative;
     left: 1100px;
     bottom: 482px;
-    /*background-color: blue;*/
+
 
 }
 .fertile-periods{
@@ -85,5 +94,4 @@
     position: relative;
     bottom:20px;
     left: 50px;
-
 }

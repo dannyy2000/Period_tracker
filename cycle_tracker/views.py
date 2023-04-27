@@ -12,7 +12,10 @@ class CycleDatesView(View):
         return render(request, 'cycle/cycle_tracker.html')
 
     def post(self, request):
-        previous_date = datetime.strptime(request.POST.get('previous_date'), '%d/%m/%Y').date()
+        previous_date_str = request.POST.get('previous_date')
+        previous_date = datetime.strptime(previous_date_str, '%Y-%m-%d').date()
+        previous_date_str_formatted = previous_date.strftime('%d/%m/%Y')
+
         cycle_length = int(request.POST.get('cycle_length'))
 
         next_occurrence = previous_date + timedelta(days=cycle_length)
