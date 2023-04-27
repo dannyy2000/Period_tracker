@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-{%load static %}
+{% load static %}
 <html lang="">
 <head>
     <title>Cycle Dates</title>
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<body>
+<body class="background-color">
     <h1 class="header">Cycle Dates</h1>
     <form method="post">
         {% csrf_token %}
-        <label for="previous_date" class="previous_date">Previous Date (dd/MM/yyyy):</label>
-        <input type="text" name="previous_date" id="previous_date" class="first_button">
+        <label for="previous_date" class="previous_date">What day did you your most recent period start? (dd/MM/yyyy):</label>
+        <input type="Text" name="previous_date" id="previous_date" class="first_button">
         <br>
-        <label for="cycle_length" class="cycle_length">Cycle Length (in days):</label>
+        <label for="cycle_length" class="cycle_length">Number of days in your cycle(in days):</label>
         <input type="text" name="cycle_length" id="cycle_length" class="second_button">
         <br>
         <input type="submit" value="Generate Cycle Dates" class="button">
@@ -29,7 +29,9 @@
         </ul>
             </div>
         <p class="flow_date">Flow Date: {{ cycle.flow_date }}</p>
-        <p class="ovulation_date">Ovulation Date: {{ cycle.ovulation_date }}</p>
+
+        <p class="ovulation_date">Your predicted ovulation day is: {{ cycle.ovulation_date }}</p>
+
         <div class="safe_periods">
         <p class="sp">Safe Periods:</p>
         <ul class="safe-periods">
@@ -37,8 +39,19 @@
             <li>{{ period.0 }} - {{ period.1 }}</li>
             {% endfor %}
         </ul>
-            </div>
+        </div>
+
+        <div class="fertile_periods">
+            <p class="fp">Your next most fertile time is from: </p>
+            <ul class="fertile-periods">
+            {% for period in cycle.fertile_periods %}
+            <li>{{ period.0 }} - {{ period.1 }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+
     </div>
+
     {% endif %}
 </body>
 </html>

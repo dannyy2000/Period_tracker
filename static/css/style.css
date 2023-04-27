@@ -1,5 +1,4 @@
 
-
 .cycle-dates {
     font-size: 16px;
 }
@@ -62,15 +61,29 @@
     bottom: 200px;
 }
 .ovulation_date{
-     position: relative;
-     left: 650px;
-     bottom: 235px;
+    position: relative;
+    left: 600px;
+    bottom: 234px;
+}
+.fertile_periods{
+    position: relative;
+    left: 1100px;
+    bottom: 482px;
+    /*background-color: blue;*/
+
+}
+.fertile-periods{
+    position: relative;
+    bottom: 1px;
 }
 .safe_periods{
-     position: relative;
-     left: 900px;
-     bottom: 270px;
+    position: relative;
+    left: 900px;
+    bottom:250px ;
 }
 .sp{
-    margin-left: 50px;
+    position: relative;
+    bottom:20px;
+    left: 50px;
+
 }

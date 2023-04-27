@@ -13,4 +13,4 @@ class Cycle(models.Model):
     ovulation_date = models.DateField()
     flow_date = models.DateField()
     safe_periods = models.TextField()
-
+    fertile_periods = models.TextField()

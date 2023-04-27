@@ -23,6 +23,12 @@ class CycleDatesView(View):
 
         ovulation_date = previous_date + timedelta(days=cycle_length - 14)
 
+        fertile_periods = []
+
+        start_fertile = ovulation_date - timedelta(days=2)
+        end_fertile = ovulation_date
+        fertile_periods.append((start_fertile, end_fertile))
+
         safe_periods = []
 
         for i in range(12):
@@ -38,7 +44,8 @@ class CycleDatesView(View):
                       next_12_occurrences=next_12_occurrences,
                       flow_date=flow_date,
                       ovulation_date=ovulation_date,
-                      safe_periods=safe_periods)
+                      safe_periods=safe_periods,
+                      fertile_periods=fertile_periods)
         cycle.save()
 
         return render(request, 'cycle/cycle_tracker.html', {'cycle': cycle})
